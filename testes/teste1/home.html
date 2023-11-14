@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <title>MicroAmper</title>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="miniMA.ico" alt="MicroAmper Logo">
+        </div>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="services.html">Serviços</a></li>
+                <li><a href="about.html">Sobre</a></li>
+                <li><a href="contact.html">Contato</a></li>
+                <li><a href="areadocliente.html">Área do Cliente</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="cupe">MicroAmper</h1>
+        <div class="image-container">
+            <img class="central" id="dynamicImage" src="forama.png" alt="Principal Image">
+            <img class="central hidden" id="nimage1" src="ipmepM.PNG" alt="nova Imagem">
+            <img class="central hidden" id="nimage2" src="juicewrlk.gif" alt="nova Imagem">
+            <button class="change-image-btn" onclick="changeImage()">Alterar</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2013 Jorge Ribeiro | Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        var currentImageIndex = 0;
+
+        function changeImage() {
+            var images = [
+                document.getElementById('dynamicImage'),
+                document.getElementById('nimage1'),
+                document.getElementById('nimage2')
+            ];
+
+            // Hide all images
+            images.forEach(function (image) {
+                image.classList.add('hidden');
+            });
+
+            // Show the next image
+            images[currentImageIndex].classList.remove('hidden');
+
+            // Move to the next image index
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+        }
+    </script>
+
+</body>
+</html>
